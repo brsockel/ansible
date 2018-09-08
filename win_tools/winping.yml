@@ -1,0 +1,7 @@
+---
+- name: win ping Sample
+  hosts: all
+
+  tasks:
+  - name: win ping
+  win_ping:

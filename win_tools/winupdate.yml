@@ -1,0 +1,13 @@
+---
+- name: Windows Updates Sample Playbook
+  hosts: all
+
+  tasks:
+  - name: Windows Updates
+    win_updates:
+      category_names:
+      - CriticalUpdates
+      - SecurityUpdates
+      - UpdateRollups
+      state: installed
+    register: update_result
