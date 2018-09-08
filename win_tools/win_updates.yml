@@ -1,3 +1,4 @@
+# https://docs.ansible.com/ansible/2.5/modules/win_updates_module.html#win-updates-module
 ---
 - name: Windows Updates Sample Playbook
   hosts: all

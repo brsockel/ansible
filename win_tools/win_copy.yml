@@ -1,0 +1,10 @@
+# https://docs.ansible.com/ansible/2.5/modules/win_copy_module.html#win-copy-module
+- name: win copy sample playbook
+  hosts: all
+
+  tasks:
+  - name: win_copy
+    win_copy:
+      src: c:\windows\logs\cbs\cbs.log
+      dest: c:\windows\logs\cbs\cbs2.log
+

@@ -1,0 +1,10 @@
+#https://docs.ansible.com/ansible/2.5/modules/win_msg_module.html#win-msg-module
+---
+- name: win_msg sample playbook
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - win_msg:
+      display_seconds: 60
+      msg: Sample Alert

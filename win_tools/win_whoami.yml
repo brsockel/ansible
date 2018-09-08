@@ -1,0 +1,7 @@
+# https://docs.ansible.com/ansible/2.5/modules/win_whoami_module.html#win-whoami-module
+- name: win_whoami playbook sample
+  hosts: all
+
+  tasks:
+  - name: win_whoami
+    win_whoami:
