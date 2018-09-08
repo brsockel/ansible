@@ -7,4 +7,4 @@
   tasks:
   - win_msg:
       display_seconds: 60
-      msg: {{win_msg_alert}}
+      msg: "{{win_msg_alert}}"
