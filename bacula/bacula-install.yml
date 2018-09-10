@@ -10,7 +10,7 @@
 
     - name: Install additional required packages
       yum: 
-        name: "wget gcc-c++ readline-devel zlib-devel lzo-devel libacl-devel mt-st mtx postfix openssl-devel mariadb-devel  mysql-server"
+        name: "wget, gcc-c++, readline-devel, zlib-devel, lzo-devel, libacl-devel, mt-st, mtx, postfix, openssl-devel, mariadb-devel,  mysql-server"
         state: latest
 
     - name: get bacula source
