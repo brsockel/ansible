@@ -10,7 +10,7 @@
 
     - name: Install additional required packages
       yum: 
-        name: "wget, gcc-c++, readline-devel, zlib-devel, lzo-devel, libacl-devel, mt-st, mtx, postfix, openssl-devel, mariadb-devel,  mysql-server"
+        name: "wget, gcc-c++, readline-devel, zlib-devel, lzo-devel, libacl-devel, mt-st, mtx, postfix, openssl-devel, mariadb-devel,  mariadb-server"
         state: latest
 
     - name: get bacula source
@@ -20,5 +20,18 @@
 
     - name: uncompress bacula code
       unarchive:
-         src: /tmp/bacula.tar
-         dest: /usr/src/bacula
+        src: /tmp/bacula.tar
+        dest: /usr/src/bacula
+
+    - name: Start Maria DB Server
+      systemd:
+        state: started
+        name: mariadb
+    
+    - name: Open Firewall Ports
+      firewalld:
+        port: 9101-9103/tcp
+        permanent: true
+        state: enabled
+
+    
