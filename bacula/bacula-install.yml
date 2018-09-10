@@ -18,9 +18,8 @@
         url:  http://bacula.us/current
         dest: /tmp/bacula.tar
 
-    - name: sleep - wait for bacula to dowload
-      - pause:
-          minutes: 2
+    - pause:
+        minutes: 2
 
     - name: uncompress bacula code
       unarchive:
