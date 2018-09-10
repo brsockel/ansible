@@ -1,0 +1,9 @@
+#https://docs.ansible.com/ansible/2.5/modules/win_command_module.html#win-command-module
+---
+- name: win_command sample playbook
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - win_command: whoami
+    register: whoami_out

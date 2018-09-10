@@ -1,0 +1,11 @@
+# https://docs.ansible.com/ansible/2.5/modules/win_defrag_module.html#win-defrag-module
+---
+- name: win defrag sample playbook
+  hosts: all
+
+  tasks:
+  - win_defrag:
+    parallel: yes
+    freespace_consolidation: yes
+    exclude_volumes: C
+    include_volumes: E

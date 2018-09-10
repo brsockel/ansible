@@ -1,0 +1,24 @@
+---
+- name: Setup Centos Server for Backup
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Yum Update
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Install additional required packages
+      yum: 
+        name: "wget gcc-c++ readline-devel zlib-devel lzo-devel libacl-devel mt-st mtx postfix openssl-devel mariadb-devel  mysql-server"
+        state: latest
+
+    - name: get bacula source
+      get_url:
+        url:  http://bacula.us/current
+        dest: /tmp/bacula.tar
+
+    - name: uncompress bacula code
+      unarchive:
+         src: /tmp/bacula.tar
+         dest: /usr/src/bacula
